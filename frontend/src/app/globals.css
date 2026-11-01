@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/* ============================================================
+   MEDIFED AI — Clinical Design System
+   ============================================================ */
+
+@theme inline {
+  /* ── Brand Colors ── */
+  --color-deep-navy: #102A43;
+  --color-primary-navy: #16324F;
+  --color-clinical-teal: #0F766E;
+  --color-soft-teal: #E6F4F1;
+  --color-canvas: #F7F9FC;
+  --color-slate-border: #E2E8F0;
+
+  /* ── Semantic Colors ── */
+  --color-emerald: #059669;
+  --color-emerald-light: #D1FAE5;
+  --color-amber: #D97706;
+  --color-amber-light: #FEF3C7;
+  --color-red: #DC2626;
+  --color-red-light: #FEE2E2;
+
+  /* ── Neutral Palette ── */
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E1;
+  --color-gray-400: #94A3B8;
+  --color-gray-500: #64748B;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1E293B;
+  --color-gray-900: #0F172A;
+
+  /* ── Typography ── */
+  --font-sans: var(--font-poppins), 'Segoe UI', system-ui, sans-serif;
+
+  /* ── Background/Foreground ── */
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-deep-navy);
+}
+
+/* ── Base Styles ── */
+body {
+  background: var(--color-canvas);
+  color: var(--color-deep-navy);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Smooth Scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-clinical-teal);
+  color: white;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Staggered delay classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ============================================================
+   GLASS MORPHISM
+   ============================================================ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(16, 42, 67, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   CARD STYLES
+   ============================================================ */
+
+.card-clinical {
+  background: white;
+  border: 1px solid var(--color-slate-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-clinical:hover {
+  box-shadow: 0 8px 25px rgba(15, 118, 110, 0.08);
+  border-color: var(--color-clinical-teal);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   GRADIENT BACKGROUNDS
+   ============================================================ */
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #102A43 0%, #16324F 40%, #0F766E 100%);
+}
+
+.bg-teal-gradient {
+  background: linear-gradient(135deg, #0F766E, #14B8A6);
+}
+
+.bg-navy-gradient {
+  background: linear-gradient(180deg, #102A43, #16324F);
+}

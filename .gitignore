@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Datasets - raw 2.1GB dataset folder (distributed via Releases / Hugging Face)
+datasets/
+*.zip
+*.tar.gz
+*.7z
+
+# Secrets / TLS private keys
+security/certs/**/*.key
+security/certs/**/*.csr
+*.key
+*.pem
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated cert serials
+results/security/certs/ca/*.srl
+security/certs/ca/*.srl
