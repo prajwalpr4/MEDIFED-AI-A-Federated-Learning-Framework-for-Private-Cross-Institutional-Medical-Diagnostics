@@ -72,6 +72,13 @@ def load_model(checkpoint_path, device):
 
     model.eval()
 
+    # Free temporary memory to stay within strict 512MB RAM limits
+    del state_dict
+    del cleaned_state_dict
+    del checkpoint
+    import gc
+    gc.collect()
+
     return model
 
 
