@@ -1,8 +1,14 @@
 # Core Deep Learning & Computer Vision
 torch>=2.2.0
 torchvision>=0.17.0
-opencv-python>=4.8.0
+opencv-python-headless>=4.8.0
 pillow>=9.5.0
+
+# API Microservice
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+python-multipart>=0.0.9
+pydantic>=2.6.0
 
 # Federated Learning Framework
 flwr>=1.7.0
